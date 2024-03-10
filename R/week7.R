@@ -53,5 +53,3 @@ week7_tbl[,5:13] %>%
   labs(x = "Score on Q5", y = "Score on Q7", color = "Experimental Condition", fill = "Experimental Condition") +
   theme(legend.position = "bottom", legend.background = element_rect("#E0E0E0"))) %>%
   ggsave(filename = "./figs/Fig5.png")
-
-?theme
