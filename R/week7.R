@@ -40,5 +40,13 @@ week7_tbl[,5:13] %>%
   labs(x = "Score on Q1", y = "Score on Q2"))  %>%
   ggsave(filename = "./figs/Fig3.png")
 
+(week7_tbl %>% 
+  ggplot(aes(x = gender, y = timeSpent)) +
+  geom_boxplot () +
+  labs(x = "Gender", y = "Time Elapsed (mins)")) %>% 
+  ggsave(filename = "./figs/Fig4.png")
+
+
+
   
     
