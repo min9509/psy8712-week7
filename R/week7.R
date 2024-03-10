@@ -28,3 +28,11 @@ week7_tbl[,5:13] %>%
   labs(x = "Date of Experiment", y = "Q1 Score"))  %>%
   ggsave(filename = "./figs/Fig1.png")
 
+(week7_tbl %>%
+  ggplot(aes(x = q1, y = q2, color = gender)) +
+  geom_point (position = "jitter") +
+  labs(color = "Participant Gender")) %>%
+  ggsave(filename = "./figs/Fig2.png")
+
+?geom_point
+    
