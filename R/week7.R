@@ -33,6 +33,12 @@ week7_tbl[,5:13] %>%
   geom_point (position = "jitter") +
   labs(color = "Participant Gender")) %>%
   ggsave(filename = "./figs/Fig2.png")
+(week7_tbl %>% 
+  ggplot(aes (x = q1, y = q2)) +
+  geom_point (position = "jitter") +
+  facet_grid(.~gender) + 
+  labs(x = "Score on Q1", y = "Score on Q2"))  %>%
+  ggsave(filename = "./figs/Fig3.png")
 
-?geom_point
+  
     
