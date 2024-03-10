@@ -1,9 +1,9 @@
 # Script Settings and Resources
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(tidyverse)
-install.packages("GGally")
 library(GGally)
 library(ggplot2)
+
 
 # Data Import and Cleaning
 week7_tbl <- read.csv("data/week3.csv", header = TRUE) %>%
@@ -19,8 +19,7 @@ week7_tbl <- read.csv("data/week3.csv", header = TRUE) %>%
 
 
 # Visualization
-week7_tbl %>%
-  select(q1:q10) %>%
-  ggpairs
-
-
+week7_tbl[,5:13] %>%
+  ggpairs() %>%
+  ggsave(filename = "./figs/Fig0.png")
+  
