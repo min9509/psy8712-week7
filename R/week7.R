@@ -1,8 +1,9 @@
 # Script Settings and Resources
 setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(tidyverse)
-
-
+install.packages("GGally")
+library(GGally)
+library(ggplot2)
 
 # Data Import and Cleaning
 week7_tbl <- read.csv("data/week3.csv", header = TRUE) %>%
@@ -12,9 +13,14 @@ week7_tbl <- read.csv("data/week3.csv", header = TRUE) %>%
   mutate(gender = factor(gender, levels = c("M", "F"), labels = c("Male", "Female"))) %>%
   filter(q6 == 1) %>%
   select(-q6) %>%
-  mutate(timeSpent = difftime(timeEnd, timeStart, units =c("mins")))
+  mutate(timeSpent = difftime(timeEnd, timeStart, units =c("mins"))) 
 
 
 
 
-  
+# Visualization
+week7_tbl %>%
+  select(q1:q10) %>%
+  ggpairs
+
+
